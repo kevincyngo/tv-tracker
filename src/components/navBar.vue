@@ -1,10 +1,10 @@
 <template>
-<ul>
-  <li><a href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li style="float:right"><a class="active" href="#about">About</a></li>
-</ul>
+
+  <div class="topnav">
+  <a @click="selectNav($event)" href="#signup">Sign up</a>
+  <a @click="selectNav($event)" href="#login">Log in</a>
+  <a @click="selectNav($event)" class="active" href="#home">Home</a>
+  </div>
 </template>
 
 <script>
@@ -14,39 +14,38 @@ export default {
     msg: String
   },
   methods: {
-    sayHi() {
-      console.log("HI");
+    selectNav(event) {
+      document.querySelector(".active").className = "";
+      event.target.className = "active";
     }
   }
 }
 </script>
 
 <style scoped>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
 
-li {
-  float: left;
-}
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    font-family: 'PT Sans', sans-serif;
+  }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+.topnav a {
+    float: right;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 12px;
 }
+  
 
-li a:hover:not(.active) {
+
+a:hover:not(.active) {
   background-color: #111;
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: teal;
 }
 </style>

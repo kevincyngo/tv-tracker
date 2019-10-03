@@ -1,25 +1,27 @@
 <template>
   <div id="app">
     <navBar></navBar>
-    <HelloWorld msg="Welcome to Your Vue.js App">
-    </HelloWorld>
+    <searchBar></searchBar>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import navBar from './components/navBar.vue'
+import searchBar from './components/search.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld, 
-    navBar
+    navBar, searchBar
   },
 }
 </script>
 
 <style>
+body {
+  background: ghostwhite;
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

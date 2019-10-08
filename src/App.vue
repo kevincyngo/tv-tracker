@@ -1,21 +1,19 @@
 <template>
   <div id="app">
     <navBar></navBar>
-    <router-view/>
-
+    <router-view />
   </div>
-  
 </template>
 
 <script>
-import navBar from './components/navBar.vue'
+import navBar from "./components/navBar.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     navBar
-  },
-}
+  }
+};
 </script>
 
 <style>
@@ -24,7 +22,7 @@ body {
   margin: 0;
 }
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

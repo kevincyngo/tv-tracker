@@ -1,11 +1,11 @@
 <template>
-  <div class="register">
+  <div class="login">
     <div class="logo">
       <img src="../assets/placeholder-homepage-logo.png" />
     </div>
     <form>
       <div class="container">
-        <h1>Sign Up</h1>
+        <h1>Log In</h1>
         <hr />
 
         <label for="email">
@@ -18,13 +18,8 @@
         </label>
         <input type="password" placeholder="Enter Password" name="psw" required />
 
-        <label for="psw-repeat">
-          <b>Repeat Password</b>
-        </label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required />
-
         <div class="clearfix">
-          <button type="submit" class="signupbtn">Sign Up</button>
+          <button type="submit" class="loginbtn">Log In</button>
         </div>
       </div>
     </form>
@@ -33,10 +28,10 @@
 
 <script>
 export default {
-  name: "register",
+  name: "login",
   data() {
     return {
-      title: "Register For Account"
+      title: "Log In"
     };
   }
 };
@@ -92,7 +87,7 @@ button:hover {
 }
 
 /* Float cancel and signup buttons and add an equal width */
-.signupbtn {
+.loginbtn {
   float: center;
   width: 100%;
 }
@@ -103,6 +98,7 @@ button:hover {
   border: 1px solid black;
   border-radius: 10px;
   padding: 16px;
+  /* width: 50%; */
   margin: auto;
 }
 

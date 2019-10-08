@@ -12,15 +12,24 @@
         placeholder="Search for tv show..."
       />
     </div>
+
+    <resultList :responseTxt="responseObj"></resultList>
+
   </div>
 </template>
 
 <script>
+import resultList from "@/components/ResultList.vue";
+
 export default {
-    name: 'HomePage',
+  name: "HomePage",
+  components: {
+    resultList
+  },
   data() {
     return {
-      query: ""
+      query: "",
+      responseObj: ""
     };
   },
   methods: {
@@ -30,10 +39,8 @@ export default {
       Http.open("GET", url);
       Http.responseType = "json";
       Http.send();
-
-      Http.onload = function() {
-        let responseObj = Http.response;
-        console.log(responseObj); // Hello, world!
+      Http.onload = () => {
+        this.responseObj = Http.response;
       };
     }
   }

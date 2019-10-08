@@ -32,15 +32,11 @@ export default {
   font-size: 25px;
 }
 
-li:hover:not(.active) {
+.nav-link:hover:not(.router-link-exact-active) {
   background-color: #111;
 }
 
 .router-link-exact-active {
   background-color: teal;
-}
-
-.active {
-  font-size: 255px;
 }
 </style>

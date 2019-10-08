@@ -49,4 +49,4 @@ export default {
     padding:3px;
 }
 
-</style>>
+</style>

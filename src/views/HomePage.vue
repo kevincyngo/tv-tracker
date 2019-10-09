@@ -13,13 +13,14 @@
       />
     </div>
 
-    <resultList :responseTxt="responseObj"></resultList>
+    <resultList v-if="shows.length > 0" :shows="shows"></resultList>
 
   </div>
 </template>
 
 <script>
 import resultList from "@/components/ResultList.vue";
+import EpisodesApi from "@/services/api/Episodes.js";
 
 export default {
   name: "HomePage",
@@ -29,20 +30,14 @@ export default {
   data() {
     return {
       query: "",
-      responseObj: ""
+      shows: []
     };
   },
   methods: {
     searchForShows() {
-      const Http = new XMLHttpRequest();
-      const url = "http://api.tvmaze.com/search/shows?q=" + this.query;
-      console.log(url);
-      Http.open("GET", url);
-      Http.responseType = "json";
-      Http.send();
-      Http.onload = () => {
-        this.responseObj = Http.response;
-      };
+      EpisodesApi.getShows(this.query).then(shows => {
+        this.shows = shows;
+      })
     }
   }
 };

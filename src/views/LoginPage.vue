@@ -38,12 +38,7 @@ export default {
 </script>
 
 <style scoped>
-.logo {
-  padding: 20px;
-}
-form {
-  display: flex;
-}
+
 
 * {
   box-sizing: border-box;
@@ -94,11 +89,10 @@ button:hover {
 
 /* Add padding to container elements */
 .container {
-  width: 500px;
   border: 1px solid black;
   border-radius: 10px;
   padding: 16px;
-  /* width: 50%; */
+  width: 50%;
   margin: auto;
 }
 

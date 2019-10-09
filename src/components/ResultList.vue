@@ -1,6 +1,8 @@
 <template>
     <div class="results">
-        {{queryJSON}}
+        <!-- {{queryJSON}} -->
+        
+  <div v-for="item in responseTxt">{{item}}</div>
     </div>
 </template>
 
@@ -10,26 +12,24 @@ export default {
     props: [
         'responseTxt'
     ],
-    computed: {
-        queryJSON: function() {
-            console.log(this.responseTxt);
-            if (this.responseTxt) {
-                console.log(this.responseTxt[0].show._links.nextepisode.href)
-                return this.responseTxt[0];
-            }
-            return this.responseTxt;
-        }
-    },
-      data() {
-    return {
-    };
-  }
+    // computed: {
+    //     queryJSON: function() {
+    //         console.log(this.responseTxt);
+    //         if (this.responseTxt) {
+    //             // console.log(this.responseTxt[0].show._links.nextepisode.href)
+    //             return this.responseTxt;
+    //         }
+    //         return this.responseTxt;
+    //     }
+    // },
+
+  
 }
 </script>
 
 <style scoped>
 * {
-    text-align:left;
-    margin-left:50px;
+    text-align:center;
+    margin:50px;
 }
 </style>

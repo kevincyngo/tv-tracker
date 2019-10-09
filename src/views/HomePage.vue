@@ -36,6 +36,7 @@ export default {
     searchForShows() {
       const Http = new XMLHttpRequest();
       const url = "http://api.tvmaze.com/search/shows?q=" + this.query;
+      console.log(url);
       Http.open("GET", url);
       Http.responseType = "json";
       Http.send();
@@ -48,17 +49,18 @@ export default {
 </script>
 
 <style scoped>
+
+
 .search-container {
-  margin-top: 10%;
   text-align: center;
   font-size: 15px;
 }
 
 #search-bar {
-  font-size: 20px;
+  font-size: 24px;
   font-family: "Oswald", sans-serif;
-  width: 500px;
+  width: 800px;
   border-radius: 5px;
-  padding: 3px;
+  padding: 15px;
 }
 </style>

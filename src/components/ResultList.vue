@@ -1,7 +1,6 @@
 <template>
   <div class="results">
-    {{loadData}}
-    <div v-for="(show, index) in shows" class="search-results" :key="show.id">
+    <div v-for="(show) in shows" class="search-results" :key="show.id">
       <div class="container">
         <div class="img-container">
           <img v-if="show.show.image != null" :src="show.show.image.medium" />
@@ -12,9 +11,8 @@
           <span v-else><p>Summary not available.</p></span>
           <span v-if="show.show.status != null"> Status: {{show.show.status}}</span>
           <p v-if="show.show.status != 'Ended' && show.show.status != null">
-            Last aired episode: {{prevResponse[index]}}
-            <br />
-            Next episode airdate: {{nextEpisode[index]}}
+              <airDates :episodeLinks="show.show._links"></airDates>
+
           </p>
         </div>
       </div>
@@ -24,9 +22,13 @@
 
 <script>
 import EpisodesApi from "@/services/api/Episodes.js";
+import airDates from "@/components/AirDates.vue";
 
 export default {
   name: "resultList",
+  components: {
+      airDates
+  },
   props: ["shows"],
   async mounted() {
     for (var show of this.shows) {
@@ -46,7 +48,7 @@ export default {
       } else {
         this.nextEpisode.push("N/A");
       }
-      console.log(this.nextEpisode)
+      
     }
   },
 
@@ -75,7 +77,6 @@ export default {
       } else {
         this.nextEpisode.push("N/A");
       }
-      console.log(this.nextEpisode)
     }
   }
   }
@@ -105,4 +106,6 @@ export default {
   flex-direction: column;
   margin-left: 10px;
 }
+
+
 </style>

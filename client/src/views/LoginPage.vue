@@ -3,7 +3,7 @@
     <div class="logo">
       <img src="../assets/placeholder-homepage-logo.png" />
     </div>
-    <form>
+    <form method="get" action="http://localhost:3000/users">
       <div class="container">
         <h1>Log In</h1>
         <hr />

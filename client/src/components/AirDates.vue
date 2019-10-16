@@ -1,10 +1,13 @@
 <template>
-  <div class="air-dates">
-    <span>
-      Previous air date: {{previousAirDate}} (<a :href="previousEpisodeURL" target="_blank">{{previousEpisodeName}}</a>)
+  <div v-cloak class="air-dates">
+    <span v-cloak >
+      Previous air date: {{previousAirDate}} 
+      <span v-if="previousAirDate">
+      (<a :href="previousEpisodeURL" target="_blank">{{previousEpisodeName}}</a>)
+      </span>
     </span>
     <br />
-    <span>
+    <span v-cloak >
       Next air date: {{nextAirDate}}
       <span v-if="nextEpisodeName != ''">
         (<a :href="nextEpisodeURL" target="_blank">{{nextEpisodeName}}</a>)
@@ -57,4 +60,7 @@ export default {
 </script>
 
 <style scoped>
+[v-cloak] {
+  display: none;
+}
 </style>

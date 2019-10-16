@@ -13,10 +13,10 @@
         </label>
         <input type="text" placeholder="Enter Email" name="email" required />
 
-        <label for="psw">
+        <label for="password">
           <b>Password</b>
         </label>
-        <input type="password" placeholder="Enter Password" name="psw" required />
+        <input type="password" placeholder="Enter Password" name="password" required />
 
         <div class="clearfix">
           <button type="submit" class="loginbtn">Log In</button>

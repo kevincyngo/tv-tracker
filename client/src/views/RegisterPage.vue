@@ -13,15 +13,15 @@
         </label>
         <input type="text" placeholder="Enter Email" name="email" required />
 
-        <label for="psw">
+        <label for="password">
           <b>Password</b>
         </label>
-        <input type="password" placeholder="Enter Password" name="psw" required />
+        <input type="password" placeholder="Enter Password" name="password" required />
 
-        <label for="psw-repeat">
+        <label for="password-repeat">
           <b>Repeat Password</b>
         </label>
-        <input type="password" placeholder="Repeat Password" name="psw-repeat" required />
+        <input type="password" placeholder="Repeat Password" name="password-repeat" required />
 
         <div class="clearfix">
           <button type="submit" class="signupbtn">Sign Up</button>

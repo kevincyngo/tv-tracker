@@ -25,7 +25,6 @@ app.get('/api/users', (req, res) => {
     const password = req.query.password;
 
     pool.query('SELECT * FROM users WHERE email = $1 AND password = $2', [email, password], (error, results) => {
-        console.log(results);
         if(results.rowCount == 0) {
           console.log("incorrect email and password combination");
         } else {
@@ -40,6 +39,7 @@ app.get('/api/users', (req, res) => {
 app.post('/api/users',(req,res) => {
     const email = req.body.email;
     const password = req.body.password;
+    console.log(req.body);
     pool.query('SELECT * FROM users WHERE email = $1', [email], (error, results) => {
         // console.log(results);
       

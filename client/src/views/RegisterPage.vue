@@ -3,25 +3,27 @@
     <div class="logo">
       <img src="../assets/placeholder-homepage-logo.png" />
     </div>
-    <form method="post" action="http://localhost:3000/api/users">
+    <form @submit="checkForm" method="post" action="http://localhost:3000/api/users">
       <div class="container">
         <h1>Sign Up</h1>
         <hr />
-
+        <p v-if="error != ''">
+          {{error}}
+        </p>
         <label for="email">
           <b>Email</b>
         </label>
-        <input type="text" placeholder="Enter Email" name="email" required />
+        <input type="text" placeholder="Enter Email" name="email" v-model="email"  required />
 
         <label for="password">
           <b>Password</b>
         </label>
-        <input type="password" placeholder="Enter Password" name="password" required />
+        <input type="password" placeholder="Enter Password" v-model="password" name="password" required />
 
         <label for="password-repeat">
           <b>Repeat Password</b>
         </label>
-        <input type="password" placeholder="Repeat Password" name="password-repeat" required />
+        <input type="password" placeholder="Repeat Password" v-model="password2" name="password-repeat"  required />
 
         <div class="clearfix">
           <button type="submit" class="signupbtn">Sign Up</button>
@@ -36,10 +38,25 @@ export default {
   name: "register",
   data() {
     return {
-      title: "Register For Account"
+      title: "Register For Account",
+      email : "",
+      password : "",
+      password2 : "",
+      error: ""
     };
+  },
+  methods: {
+    checkForm(e) {
+      this.errors = [];
+      if (this.password != this.password2) {
+        this.error = ("passwords don't match.");
+        console.log("nomatch");
+        e.preventDefault();
+      }
+
+    }
   }
-};
+}
 </script>
 
 <style scoped>
